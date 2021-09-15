@@ -1,0 +1,44 @@
+.form_wrapper{
+margin: 0 auto;
+text-align: -webkit-center;
+}
+.form_content{
+   margin-top: 80px;
+   border: 2px solid silver;
+   box-shadow: 3px 3px 3px silver;
+   border-radius: 15px;
+   min-width: 300px;
+   max-width: 450px;
+
+   padding: 20px;
+}
+.fio{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.fio_item{
+   padding: 5px;
+   border: 1px solid silver;
+   border-radius: 5px;
+   color: black;
+   font-size: 16px;
+}
+.register_info{
+   display: flex;
+   flex-direction: column;
+}
+.register_item{
+   margin-top: 10px;
+   padding: 5px;
+   border: 1px solid silver;
+   border-radius: 5px;
+   color: black;
+   font-size: 16px;
+}
+
+.create{
+   margin-top: 30px;
+    padding: 10px;
+    font-weight: 700;
+}

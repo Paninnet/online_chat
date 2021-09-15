@@ -1,25 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/Header';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import Login from './components/login/Login';
+import Chat from './components/chat/Chat';
+
+
+export const login = false
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Header />
+      {login ?
+        (<Switch>
+          <Route path='/chat' exact={true} component={Chat}></Route>
+          <Redirect to='/chat'></Redirect>
+        </Switch>)
+        :
+        (<Switch>
+          <Route path='/login' component={Login}></Route>
+          <Redirect to='/login'></Redirect>
+        </Switch>)
+      }
+    </BrowserRouter >
+  )
 }
 
 export default App;

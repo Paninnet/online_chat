@@ -1,0 +1,34 @@
+.header_wrapper{
+   border-bottom: 2px solid silver;
+   text-align: end;
+  
+}
+.header_wrapper_chat{
+   text-align: center;
+   border-bottom: 2px solid silver;
+   padding: 15px;
+}
+.items_wrapper{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+.nav_item{
+   padding: 15px;
+   margin-right: 20px;
+   font-size: 18px;
+   font-weight: 400;
+   text-decoration: none;
+   color:grey;
+   width: 180px;
+}
+
+.nav_item:hover{
+   font-weight: 900;
+}
+
+.nav_item_active{
+   font-weight: 900;
+   color:black;  
+}
