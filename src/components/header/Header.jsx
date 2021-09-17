@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react/cjs/react.development';
 import { login } from '../../App';
+import { dataContext } from '../../context/dataContext';
+import { auth } from '../../context/DataState';
 import classes from './Header.module.css'
 
 
 
 const Header = () => {
-   if (login) {
+   const {state,singOUT} = useContext(dataContext)
+
+   const [currentUser] =useAuthState(auth)
+   if (currentUser) {
       return (
          <div className={classes.header_wrapper_chat}>
-            <NavLink className={classes.nav_item} to='/login/log'>Log Out</NavLink>
+            <NavLink onClick={() => singOUT()} className={classes.nav_item} to='/login/log/'>Log Out</NavLink>
          </div>
       );
    } else {
@@ -17,7 +24,7 @@ const Header = () => {
          <div className={classes.header_wrapper}>
             <div className={classes.items_wrapper}>
                <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} to='/login/create/'>Create New Account</NavLink>
-               <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} to='/login/log'>Log In</NavLink>
+               <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} to='/login/log/'>Log In</NavLink>
             </div>
          </div>
       );

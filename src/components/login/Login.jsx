@@ -8,9 +8,8 @@ const Login = () => {
    return (
       <div className={classes.log_wrapper}>
          <Switch>
-            <Route path='/login/create/' component={Create_Account}></Route>
-            <Route path='/login/log/' component={Login_Form} ></Route>
-            <Redirect to='/login/log/'></Redirect>
+            <Route path='/login/create/'  component={Create_Account}></Route>
+            <Route path='/login/log/'  component={Login_Form} ></Route>
          </Switch>
       </div>
    );
