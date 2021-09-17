@@ -21,12 +21,12 @@ export const RouterComponent = () => {
      
          {currentUser ?
             <Switch>
-               <Route path='/online_chat/chat/' component={Chat}></Route>
+               <Route path='/online_chat/chat/'  component={Chat}></Route>
                <Redirect to='/online_chat/chat/' ></Redirect>
             </Switch>
             :
             <Switch>
-               <Route path='/online_chat/' component={Login}></Route>
+               <Route path='/online_chat/'  component={Login}></Route>
                <Redirect to='/online_chat/'></Redirect>
             </Switch>
          }

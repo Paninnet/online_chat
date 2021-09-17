@@ -24,7 +24,7 @@ const Header = () => {
          <div className={classes.header_wrapper}>
             <div className={classes.items_wrapper}>
                <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} to='/online_chat/login/create/'>Create New Account</NavLink>
-               <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} to='/online_chat/'>Log In</NavLink>
+               <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} exact to='/online_chat/'>Log In</NavLink>
             </div>
          </div>
       );
