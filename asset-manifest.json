@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "//login/log/static/css/main.31323ba1.chunk.css",
-    "main.js": "//login/log/static/js/main.34b81275.chunk.js",
-    "main.js.map": "//login/log/static/js/main.34b81275.chunk.js.map",
-    "runtime-main.js": "//login/log/static/js/runtime-main.efe98ef8.js",
-    "runtime-main.js.map": "//login/log/static/js/runtime-main.efe98ef8.js.map",
-    "static/js/2.1d3bf48f.chunk.js": "//login/log/static/js/2.1d3bf48f.chunk.js",
-    "static/js/2.1d3bf48f.chunk.js.map": "//login/log/static/js/2.1d3bf48f.chunk.js.map",
-    "static/js/3.3a3f1155.chunk.js": "//login/log/static/js/3.3a3f1155.chunk.js",
-    "static/js/3.3a3f1155.chunk.js.map": "//login/log/static/js/3.3a3f1155.chunk.js.map",
-    "index.html": "//login/log/index.html",
-    "static/css/main.31323ba1.chunk.css.map": "//login/log/static/css/main.31323ba1.chunk.css.map",
-    "static/js/2.1d3bf48f.chunk.js.LICENSE.txt": "//login/log/static/js/2.1d3bf48f.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "//login/log/static/media/logo.6ce24c58.svg"
+    "main.css": "/online_chat/login/log/static/css/main.31323ba1.chunk.css",
+    "main.js": "/online_chat/login/log/static/js/main.9995269f.chunk.js",
+    "main.js.map": "/online_chat/login/log/static/js/main.9995269f.chunk.js.map",
+    "runtime-main.js": "/online_chat/login/log/static/js/runtime-main.8bc6cb01.js",
+    "runtime-main.js.map": "/online_chat/login/log/static/js/runtime-main.8bc6cb01.js.map",
+    "static/js/2.11dc0f7a.chunk.js": "/online_chat/login/log/static/js/2.11dc0f7a.chunk.js",
+    "static/js/2.11dc0f7a.chunk.js.map": "/online_chat/login/log/static/js/2.11dc0f7a.chunk.js.map",
+    "static/js/3.3a3f1155.chunk.js": "/online_chat/login/log/static/js/3.3a3f1155.chunk.js",
+    "static/js/3.3a3f1155.chunk.js.map": "/online_chat/login/log/static/js/3.3a3f1155.chunk.js.map",
+    "index.html": "/online_chat/login/log/index.html",
+    "static/css/main.31323ba1.chunk.css.map": "/online_chat/login/log/static/css/main.31323ba1.chunk.css.map",
+    "static/js/2.11dc0f7a.chunk.js.LICENSE.txt": "/online_chat/login/log/static/js/2.11dc0f7a.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/online_chat/login/log/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.efe98ef8.js",
-    "static/js/2.1d3bf48f.chunk.js",
+    "static/js/runtime-main.8bc6cb01.js",
+    "static/js/2.11dc0f7a.chunk.js",
     "static/css/main.31323ba1.chunk.css",
-    "static/js/main.34b81275.chunk.js"
+    "static/js/main.9995269f.chunk.js"
   ]
 }
