@@ -9,7 +9,7 @@ const Login = () => {
       <div className={classes.log_wrapper}>
          <Switch>
             <Route path='/online_chat/login/create/'  component={Create_Account}></Route>
-            <Route path='/online_chat/login/log/'  component={Login_Form} ></Route>
+            <Route path='/online_chat/'  component={Login_Form} ></Route>
          </Switch>
       </div>
    );

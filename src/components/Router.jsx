@@ -26,8 +26,8 @@ export const RouterComponent = () => {
             </Switch>
             :
             <Switch>
-               <Route path='/online_chat/login/' component={Login}></Route>
-               <Redirect to='/online_chat/login/log'></Redirect>
+               <Route path='/online_chat/' component={Login}></Route>
+               <Redirect to='/online_chat/'></Redirect>
             </Switch>
          }
       </>
