@@ -16,15 +16,15 @@ const Header = () => {
    if (currentUser) {
       return (
          <div className={classes.header_wrapper_chat}>
-            <NavLink onClick={() => singOUT()} className={classes.nav_item} to='/login/log/'>Log Out</NavLink>
+            <NavLink onClick={() => singOUT()} className={classes.nav_item} to='/online_chat/login/log/'>Log Out</NavLink>
          </div>
       );
    } else {
       return (
          <div className={classes.header_wrapper}>
             <div className={classes.items_wrapper}>
-               <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} to='/login/create/'>Create New Account</NavLink>
-               <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} to='/login/log/'>Log In</NavLink>
+               <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} to='/online_chat/login/create/'>Create New Account</NavLink>
+               <NavLink activeClassName={classes.nav_item_active} className={classes.nav_item} to='/online_chat/login/log/'>Log In</NavLink>
             </div>
          </div>
       );

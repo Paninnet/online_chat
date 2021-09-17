@@ -18,15 +18,16 @@ export const RouterComponent = () => {
 
       <>
          {/* {state.isRegister ? <Chat /> : <Login />} */}
+     
          {currentUser ?
             <Switch>
-               <Route path='/chat/' component={Chat}></Route>
-               <Redirect to='/chat/' ></Redirect>
+               <Route path='/online_chat/chat/' component={Chat}></Route>
+               <Redirect to='/online_chat/chat/' ></Redirect>
             </Switch>
             :
             <Switch>
-               <Route path='/login/' component={Login}></Route>
-               <Redirect to='/login/log'></Redirect>
+               <Route path='/online_chat/login/' component={Login}></Route>
+               <Redirect to='/online_chat/login/log'></Redirect>
             </Switch>
          }
       </>
