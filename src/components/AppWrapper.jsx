@@ -12,23 +12,23 @@ import { RouterComponent } from './Router'
 
 export const AppWrapper = () => {
 
-   const [currentUser,loading] =useAuthState(auth)
+   const [currentUser, loading] = useAuthState(auth)
 
-   if (loading){
-      return(
-         <Loader/>
-      )
-   }else{
+   if (loading) {
       return (
-         <BrowserRouter>
-            <DataState>
-               <Header />
-               <RouterComponent/>
-            </DataState>
-         </BrowserRouter >
+         <Loader />
       )
-
+   } else {
+      return (
+         <>
+            <div>123</div>
+            <BrowserRouter>
+               <DataState>
+                  <Header />
+                  <RouterComponent />
+               </DataState>
+            </BrowserRouter >
+         </>
+      )
    }
-
-
 }

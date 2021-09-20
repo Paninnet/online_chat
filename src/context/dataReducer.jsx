@@ -25,6 +25,8 @@ export const ON_INPUT_SEND = 'ON_INPUT_SEND'
 
 export const SING_OUT = 'SING_OUT'
 export const SING_IN = 'SING_OUT'
+
+export const DATA_FETCHING = 'DATA_FETCHING'
 debugger
 
 export const dataReducer = (state, action) => {

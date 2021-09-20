@@ -1,20 +1,15 @@
 import React, { useReducer } from "react";
 import { dataContext } from "./dataContext";
-import { CHAT_INPUT_CHANGE, dataReducer, IS_FETCHING, ON_EMAIL_CHANGE_CREATE, ON_EMAIL_CHANGE_LOGIN, ON_INPUT_SEND, ON_LAST_NAME_CHANGE_CREATE, ON_NAME_CHANGE_CREATE, ON_PASSWORD_CHANGE_CREATE, ON_PASSWORD_CHANGE_LOGIN, ON_SEND_FORM_CREATE, ON_SEND_FORM_LOGIN, SING_IN, SING_OUT, WRONG_DATA, WRONG_DATAE, WRONG_DATAL, WRONG_DATAN, WRONG_DATAP } from "./dataReducer";
+import { CHAT_INPUT_CHANGE, dataReducer, DATA_FETCHING, IS_FETCHING, ON_EMAIL_CHANGE_CREATE, ON_EMAIL_CHANGE_LOGIN, ON_INPUT_SEND, ON_LAST_NAME_CHANGE_CREATE, ON_NAME_CHANGE_CREATE, ON_PASSWORD_CHANGE_CREATE, ON_PASSWORD_CHANGE_LOGIN, ON_SEND_FORM_CREATE, ON_SEND_FORM_LOGIN, SING_IN, SING_OUT, WRONG_DATA, WRONG_DATAE, WRONG_DATAL, WRONG_DATAN, WRONG_DATAP } from "./dataReducer";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import 'firebase/firestore';
 import { updateDoc, serverTimestamp } from "firebase/firestore";
-import { doc, setDoc,addDoc, Timestamp } from "firebase/firestore";
+import { doc, setDoc, addDoc, Timestamp, getDoc, onSnapshot } from "firebase/firestore";
 import { collection } from "firebase/firestore";
-import { useCollectionData } from "react-firebase-hooks/firestore";
 
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
    apiKey: "AIzaSyDE5xkXtHzNr59QfWdCAhUwp2nHjKxmGeQ",
    authDomain: "onlinechat-bcf87.firebaseapp.com",
@@ -53,6 +48,10 @@ export const DataState = ({ children }) => {
       wronLastName: false,
       wrongEmail: false,
       wrongPassword: false,
+
+      dataMessage: []
+
+
    }
 
 
@@ -64,12 +63,6 @@ export const DataState = ({ children }) => {
    const fetchig = () => {
       dispatch({ type: IS_FETCHING })
    }
-
-
-
-
-
-
 
    const nameChangeCreate = (nameValue) => {
       dispatch({ type: ON_NAME_CHANGE_CREATE, nameValue, wrongName: false })
@@ -141,43 +134,13 @@ export const DataState = ({ children }) => {
    const changeInputChat = (inputChat) => {
       dispatch({ type: CHAT_INPUT_CHANGE, inputChat })
    }
-   // const [messages] = useCollectionData(
-   //    collection('messages')
-   // )
 
    const sendMessage = async () => {
-      // firestore.collection('messages').add({
-      //    user: auth.currentUser.email,
-      //    text:state.inputChat,
-      //    timestamp: serverTimestamp()
-      // })
-
-   //    db.collection("users").doc("userid").set({
-   //       username: 'username',
-   //       password: 'password', 
-   //       email: 'email', 
-   //       age: 'age' 
-   //   })
-
-      // const data = {
-      //    user: auth.currentUser.email,
-      //    text: state.inputChat,
-      //    timestamp: serverTimestamp()
-      // }
-
-      //  await setDoc(doc(firestore, "message", "new-message-id"), data);
-
-      //  await setDoc(doc(firestore, "message", "new-message-id"), {
-      //    user: auth.currentUser.email,
-      //    text: state.inputChat,
-      //    timestamp: serverTimestamp()
-      //  });
-
-       const docRef = await addDoc(collection(firestore, "message"), {
+      const docRef = await addDoc(collection(firestore, "message"), {
          user: auth.currentUser.email,
          text: state.inputChat,
          timestamp: serverTimestamp()
-       });
+      });
       // setDoc(doc(db, "cities", "new-city-id"), data);
       console.log(state.inputChat);
       dispatch({ type: ON_INPUT_SEND, inputChat: "" })
@@ -213,6 +176,9 @@ export const DataState = ({ children }) => {
          switch (error.message) {
             case 'Firebase: Error (auth/invalid-email).':
                dispatch({ type: WRONG_DATAE, wrongEmail: true })
+            case 'Firebase: Error (auth/user-not-found).':
+               dispatch({ type: WRONG_DATAE, wrongEmail: true })
+               dispatch({ type: WRONG_DATAP, wrongPassword: true })
             case 'Firebase: Error (auth/internal-error).':
                dispatch({ type: WRONG_DATAP, wrongPassword: true })
             case 'Firebase: Error (auth/wrong-password).':
@@ -222,10 +188,8 @@ export const DataState = ({ children }) => {
                break;
          }
       }
-
-
-
    }
+
    return (
       <dataContext.Provider value={{ state, nameChangeCreate, LastNameChangeCreate, emailChangeCreate, passwordChangeCreate, sendDataCreate, emailChangeLOGIN, passwodChangeLOGIN, sendDataLOGIN, singOUT, singIN, changeInputChat, sendMessage }}>
          {children}

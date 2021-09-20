@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
-import { useEffect } from 'react/cjs/react.development';
-import { login } from '../../App';
 import { dataContext } from '../../context/dataContext';
 import { auth } from '../../context/DataState';
 import classes from './Header.module.css'
