@@ -21,7 +21,6 @@ export const AppWrapper = () => {
    } else {
       return (
          <>
-            <div>123</div>
             <BrowserRouter>
                <DataState>
                   <Header />
